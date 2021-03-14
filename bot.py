@@ -1,5 +1,10 @@
 import discord
 from discord.ext import commands
+import json
+import random
+
+with open('setting.json' , mode = 'r' , encoding = 'utf8') as jfile:
+    jdata = json.load(jfile)
 
 bot = commands.Bot(command_prefix="[")
 
@@ -11,6 +16,14 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send(f'{round(bot.latency*1000)} ms')
 
+@bot.command()
+async def 圖片(ctx):
+    pic = discord.File(jdata['PIC'])
+    await ctx.send(file = pic)
 
 
-bot.run('ODE3NjU5Njg0OTk4NjEwOTg2.YEMu7A.bSvN2o_mKVow0mOVTPiDnMKaKzI')
+
+
+
+
+bot.run(jdata['TOKEN'])
