@@ -13,7 +13,20 @@ bot = commands.Bot(command_prefix="[")
 async def on_ready():
     print(">> Bot is online <<")
 
+@bot.command()
+async def load(ctx, extension):
+    bot.unload_extension(f'cmds.{extension}')
+    await ctx.send(f'Loaded {extension} done')
 
+@bot.command()
+async def unload(ctx, extension):
+    bot.reload_extension(f'cmds.{extension}')
+    await ctx.send(f'UnLoaded {extension} done')
+
+@bot.command()
+async def reload(ctx, extension):
+    bot.load_extension(f'cmds.{extension}')
+    await ctx.send(f'ReLoaded {extension} done')
 
 for Filename in os.listdir('./cmds'):
     if Filename.endswith('.py'):
