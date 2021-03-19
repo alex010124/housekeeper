@@ -9,7 +9,7 @@ class Task(Cog_Extension):
 
 #        async def interval():
 #            await selt.bot.wait_until_ready()
-#            self.channel = self.bot.get_channel('820742681507659776')
+#            self.channel = self.bot.get_channel()
 #            while not self.bot.is_closed():
 #                await self.channel.send("hi")
 #                await asyncio.sleep(5)
