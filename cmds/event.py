@@ -20,23 +20,26 @@ class Event(Cog_Extension):
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, payload):
         print(payload.emoji)
-        if payload.message_id == 822355740181790790:
-            if str(payload.emoji) == '<:cha:814150233784451143>':
+        if payload.message_id == 823370046838669314:
+            if str(payload.emoji) == '<:league:823370437979013122>':
                 guild = self.bot.get_guild(payload.guild_id)
-                role = guild.get_role(691293603120807949)
+                role = guild.get_role(823398194456297513)
                 await payload.member.add_roles(role)
                 await payload.member.send(f"you get {role}")
-            elif str(payload.emoji) == '<:leon:695249835045027913>':
+
+            elif str(payload.emoji) == '<:Els:823371826742034462>':
                 guild = self.bot.get_guild(payload.guild_id)
-                role = guild.get_role(787619351326883840)
+                role = guild.get_role(800733672935522334)
                 await payload.member.add_roles(role)
                 await payload.member.send(f"you get {role}")
-            elif str(payload.emoji) == '<:leon:695249835045027913>':
+
+            elif str(payload.emoji) == '<:mine:823372670611488809>':
                 guild = self.bot.get_guild(payload.guild_id)
-                role = guild.get_role(787619351326883840)
+                role = guild.get_role(823398660443209729)
                 await payload.member.add_roles(role)
-                await payload.member.send(f"you get {role}")    
-            elif str(payload.emoji) == '<:leon:695249835045027913>':
+                await payload.member.send(f"you get {role}") 
+
+            elif str(payload.emoji) == '<:stanley:823373950292983848>':
                 guild = self.bot.get_guild(payload.guild_id)
                 role = guild.get_role(787619351326883840)
                 await payload.member.add_roles(role)
@@ -44,26 +47,29 @@ class Event(Cog_Extension):
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
-        if payload.message_id == 822355740181790790:
-            if str(payload.emoji) == '<:cha:814150233784451143>':
+        if payload.message_id == 823370046838669314:
+            if str(payload.emoji) == '<:league:823370437979013122>':
                 guild = self.bot.get_guild(payload.guild_id)
                 user = await guild.fetch_member(payload.user_id)
-                role = guild.get_role(691293603120807949)
+                role = guild.get_role(823398194456297513)
                 await user.remove_roles(role)   
                 await user.send(f"you remove{role}")
-            elif str(payload.emoji) == '<:leon:695249835045027913>':
+
+            elif str(payload.emoji) == '<:Els:823371826742034462>':
                 guild = self.bot.get_guild(payload.guild_id)
                 user = await guild.fetch_member(payload.user_id)
-                role = guild.get_role(787619351326883840)
+                role = guild.get_role(800733672935522334)
                 await user.remove_roles(role)   
                 await user.send(f"you remove{role}")
-            elif str(payload.emoji) == '<:leon:695249835045027913>':
+
+            elif str(payload.emoji) == '<:mine:823372670611488809>':
                 guild = self.bot.get_guild(payload.guild_id)
                 user = await guild.fetch_member(payload.user_id)
-                role = guild.get_role(787619351326883840)
+                role = guild.get_role(823398660443209729)
                 await user.remove_roles(role)   
                 await user.send(f"you remove{role}")
-            elif str(payload.emoji) == '<:leon:695249835045027913>':
+                
+            elif str(payload.emoji) == '<:stanley:823373950292983848>':
                 guild = self.bot.get_guild(payload.guild_id)
                 user = await guild.fetch_member(payload.user_id)
                 role = guild.get_role(787619351326883840)
