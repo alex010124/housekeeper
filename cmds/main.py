@@ -19,6 +19,10 @@ class Main(Cog_Extension):
         await ctx.send(msg)
 
     @commands.command()
+    async def clr(self, ctx, num: int):
+        await ctx.channel.purge(limit = num+1)
+
+    @commands.command()
     async def em(self, ctx):
         embed=discord.Embed(title="about", description="about housekeeper", color=0x00fbff, timestamp= datetime.datetime.now())
         embed.set_author(name="Sheng")
