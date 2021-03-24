@@ -43,7 +43,26 @@ class Event(Cog_Extension):
                 guild = self.bot.get_guild(payload.guild_id)
                 role = guild.get_role(787619351326883840)
                 await payload.member.add_roles(role)
-                await payload.member.send(f"you get {role}")   
+                await payload.member.send(f"you get {role}")  
+
+            elif str(payload.emoji) == '<:leon:695249835045027913>':
+                guild = self.bot.get_guild(payload.guild_id)
+                role = guild.get_role(692359520009322538)
+                await payload.member.add_roles(role)
+                await payload.member.send(f"you get {role}")
+
+            elif str(payload.emoji) == '<:cards:823413542345768960>':
+                guild = self.bot.get_guild(payload.guild_id)
+                role = guild.get_role(823414024925741067)
+                await payload.member.add_roles(role)
+                await payload.member.send(f"you get {role}")
+
+            elif str(payload.emoji) == '<:ocd:823467215172927488>':
+                guild = self.bot.get_guild(payload.guild_id)
+                role = guild.get_role(786473974615638017)
+                await payload.member.add_roles(role)
+                await payload.member.send(f"you get {role}")
+  
 
     @commands.Cog.listener()
     async def on_raw_reaction_remove(self, payload):
@@ -75,6 +94,28 @@ class Event(Cog_Extension):
                 role = guild.get_role(787619351326883840)
                 await user.remove_roles(role)   
                 await user.send(f"you remove{role}")
+
+            elif str(payload.emoji) == '<:leon:695249835045027913>':
+                guild = self.bot.get_guild(payload.guild_id)
+                user = await guild.fetch_member(payload.user_id)
+                role = guild.get_role(692359520009322538)
+                await user.remove_roles(role)   
+                await user.send(f"you remove{role}")
+
+            elif str(payload.emoji) == '<:cards:823413542345768960>':
+                guild = self.bot.get_guild(payload.guild_id)
+                user = await guild.fetch_member(payload.user_id)
+                role = guild.get_role(823414024925741067)
+                await user.remove_roles(role)   
+                await user.send(f"you remove{role}")
+
+            elif str(payload.emoji) == '<:ocd:823467215172927488>':
+                guild = self.bot.get_guild(payload.guild_id)
+                user = await guild.fetch_member(payload.user_id)
+                role = guild.get_role(786473974615638017)
+                await user.remove_roles(role)   
+                await user.send(f"you remove{role}")
+
 
 def setup(bot):
     bot.add_cog(Event(bot))
